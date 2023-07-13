@@ -12,6 +12,8 @@ app.use(bodyParser.json());
 import postRoutes from "./routes/postRoutes.js" 
 import authRoutes from "./routes/authRoutes.js"
 import userRoutes from "./routes/userRoutes.js" 
+import commentRoutes from "./routes/commentRoutes.js"
+import likeRoutes from "./routes/likeRoutes.js"
 
 import cookieParser from "cookie-parser";
 import multer from "multer";  
@@ -55,6 +57,8 @@ app.post('/uploadDp',uploadDp.single('displayPic'),(req,res)=>{
 app.use("/api/posts",postRoutes);   
 app.use("/api/auth",authRoutes);
 app.use("/api/users",userRoutes); 
+app.use("/api/comment",commentRoutes);
+app.use("/api/likes",likeRoutes);
 
 app.listen(8800,()=>{
     console.log("app is running in port 8800");
